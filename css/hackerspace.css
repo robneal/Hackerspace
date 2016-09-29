@@ -1,3 +1,10 @@
+/* 
+- Rutgers HackRSpace Copyright 2016; 
+- Author(s): Robert Neal;  
+- Last Updated: September 28, 2016; 
+*/
+
+/*	-------------[ALL PAGES] General CSS Element Rules *--------------------- */
 html, body {
 	margin:0;
 	padding:0;
@@ -11,16 +18,15 @@ body {
 	color:#1a1a1a;
 	background-color:#FFFFE5; /*OFF WHITE*/
 }
-
 h1, h2, h3, h4, h5, h6 , figure, article,p ,iframe{
 	margin: 0;
 	padding: 0;
 	border: 0; 
 }
+
 header, nav, footer, section, article, div, figure, iframe{
 	box-sizing: border-box;
 }
-
 img, embed, object, video{
 	max-width:100%;	
 }
@@ -28,7 +34,6 @@ img{
 	vertical-align: top; /* Gets rid of extra space at the buttom of image */	
 	max-width:100%;
 }
-
 ul, li {
 	list-style: none;
 	padding: 0;
@@ -44,18 +49,19 @@ a:visited {
 
 
 
-
+/*-------------[ALL PAGES] Class & CSS Rules Used to Debug *----------------- */
 .debug{
 	/*border: solid 1px black;
 	background: rgba(0,0,0, .2);*/ 
 }
 .debug:hover {
-	/**background: rgba(0,0,0, .4);/**/
+	/*background: rgba(0,0,0, .4);*/
 }
-/*****************************************************************END OF GENERAL CSS RULES********************************************************/
 
-/*********************************************************************GENERAL SECTION RULES************************************************************/
 
+
+/*	-------------[ALL PAGES] General Section Rules *------------------------- */
+/* - Each page is made of several section layers to make the site responsive - */
 .outerSection{
 	margin:0;
 	width:100%;
@@ -74,11 +80,11 @@ a:visited {
 	border:solid 0px green;
 	min-width:;
 }
-/***************************************************************END OF GENERAL SECTION RULES*********************************************************/ 
 
 
 
-/***********************************************************HEADER/ SECTION ONE  RULES***************************************************************/
+/*	------------[ALL PAGES] Header/Nav Menu Section Rules*------------------- */
+/* - Used on every page - */
 header{
 	background-color:white;
 }
@@ -89,8 +95,7 @@ header .sectionData{
 	width:100%;
 	display:;
 }	
-
-/***************LOGO******************************/
+/*-LOGO Rules-------------------------------*/
 header figure{
 	box-shadow:border-box;
 	width:100%;
@@ -100,14 +105,13 @@ header figure{
 header figure img{
 	width:100%;
 }
-/*********************END OF LOGO******************/
 
-/*********************NAVAGATION MENU**************/
+
+/*-Nav Menu Rules --------------------------*/
 .navMenu{
 	width:100%;
 	vertical-align:middle;
 	box-shadow:border-box;
-	
 	background-color:inherit;
 	background-color:#F2A663; /*ORANGE*/
 	border-top:solid 1px black; 
@@ -117,8 +121,6 @@ header figure img{
 	display:table;
 	padding:24px 0px;
 }
-
-
 .navItem {
 	display:table-cell;
 	box-sizing: border-box;
@@ -131,52 +133,35 @@ header figure img{
 	border-left:solid 1px black;
 	border-right:solid 1px black;
 }
-
-
 .navItem  a{
 	box-sizing:border-box;
 	text-decoration:none;
 	width:100%;
 	text-transform: uppercase;
-	font-size:;
 	line-height:24px;
 	text-align:center;
 	color:green; /*ORANGE*/
 	min-width:100%;
-	display:;
 }
 .navItem a:hover{
 	color:#BDD4DE; /*LIGHT BLUE*/
-	background:;
 }	
 .currentPage a{
 	color:black;
 }
-/*******************END OF NAVAGATION MENU**************************/
-
-
-/***************************************************************END OF HEADER***********************************************************************/
 
 
 
+/*	------------[Homepage] - Visual Lead Section Rules *--------------------- */
 
-
-
-
-
-
-/***************************************************************BEGINING OF VISUAL LEAD SECTION*****************************************************/
 .visualOuterSection{
 	background-color: #CDC5B7;
 }
-
 .visualLead {
 	width: 100%;
 	max-width:100%;
 	background-color:#CDC5B7; /*GRAY*/
 }
-
-
 .visualImage {
 	box-sizing: border-box;
 	width:100%;
@@ -185,8 +170,6 @@ header figure img{
 	width:100%;
 	min-height:250px; 
 }
-
-
 .visualDescription {
 	box-sizing: border-box;
 	width: 100%;
@@ -196,7 +179,8 @@ header figure img{
 }
 .visualDescription  h2{
 	box-sizing: border-box;
-	padding:15px 
+	padding:15px;
+	text-align: center;
 }
 .visualDescription  p{
 	box-sizing: border-box;
@@ -209,22 +193,15 @@ header figure img{
 .visualDescription a:hover{
 	color:#E74C3C; /*BRIGHT RED*/ 
 }
-/**********************************************************************END OF VISUAL LEAD SECTION *********************************************************/
 
 
 
-
-
-
-
-
-
-
-/**********************************************************************BEGINING OF WHAT WE HAVE SECTION****************************************************/
+/*	-----------[Homepage] - What We Have Section Rules *--------------------- */
 .whatWeHave{
 	background-color:inherit;
 }
-/******************************************HARDWARE SECTION*****************************************************************/
+
+/*	-----------[Homepage] - Hardware Section Rules *------------------------- */
 .hardware{
 	background-color:#FFFFE5; /*OFF WHITE*/
 }
@@ -243,16 +220,14 @@ header figure img{
 .hardware p a:hover{
 	color:#F2A663; /*ORANGE*/
 }
-/*****************************************END OF HARDWARE SECTION************************************************************/
-/****************************************ELECTRONICS SECTION*****************************************************************/
 
+/*	-------------[Homepage] - Electronics Section Rules *-------------------- */
 .electronics{
 	background-color:#CDC5B7; /*GRAY*/
 }
 .electronics h2{
 	text-align:center;
 	padding:20px;
-	color:;
 }
 .electronics p {
 	padding:20px;
@@ -264,8 +239,8 @@ header figure img{
 .electronics p a:hover{
 	color:#E74C3C; /*BRIGHT RED*/ 
 }
-/*******************************************END OF ELECTRONICS SECTION*******************************************************/
-/********************************************SOFTWARE SECTION****************************************************************/
+
+/*	-----------[Homepage] - Software Section Rules *------------------------- */
 .software{
 	background-color:#CDC5B7; /*GRAY*/
 	background-color:#F1E9BB; /*ORANGE WHITE*/
@@ -287,28 +262,16 @@ header figure img{
 	color:#F2A663; /*ORANGE*/
 }
 
-/**********************************************************************END OF WHAT WE HAVE SECTION**********************************************************************/
 
-
-
-
-
-
-
-
-
-
-
-/**********************************************************************BEGINING OF HOURS AND LOCATION SECTION************************************************************/
+/*	-----------[Homepage] - Hours & Location Section Rules *----------------- */
 .hoursAndLocation{
 	background-color:#CDC5B7; /*GRAY*/
 }
-/******************************************HOURS***********************************************/
+
+/*	-----------[Homepage] - Hours Section Rules *---------------------------- */
 .hours{
 	background-color:#CDC5B7; /*GRAY*/
 	width:100%;
-	max-width:;
-	overflow-x:;
 }
 .hours h2{
 	text-align:center;
@@ -327,15 +290,12 @@ header figure img{
 .hours th, td{
 	padding:10px 10px 6px 10px;  
 	text-align:center;
-	max-width:;
-	width:;
 }
 .hours table th{
 	text-transform:uppercase;
 	letter-spacing: 0.1em;	
 	font-size:90%;
 	border-bottom: 2px solid #111111;
-	border-top: ;
 	text-align: center;
 }
 .hours tr.even{
@@ -344,8 +304,8 @@ header figure img{
 .hours tr:hover{
 	background-color:#E74C3C; /*BRIGHT RED*/ 
 }
-/********************************END OF HOURS*********************************************/ 
-/************************************LOCATION**********************************************/
+
+/*	-----------[Homepage] - Location Section Rules *------------------------- */
 .location{
 	background-color:#CDC5B7; /*GRAY*/
 	background-color:#F1E9BB; /*ORANGE WHITE*/
@@ -366,7 +326,6 @@ header figure img{
 .location p a:hover{
 	color:#F2A663; /*ORANGE*/
 }
-
 .location iframe{
 	box-shadow:border-box;
 	width:100%;
@@ -374,40 +333,33 @@ header figure img{
 	max-width:100%;
 	height:350px;
 }
-/********************************************************************************END OF HOURS AND LOCATION****************************************************/
 
 
 
 
 
-/********************************************************************************FOOTER SECTION******************************************************************************/
+/* -------------[ALL PAGES] Footer & Credits Section Rules*------------------ */
+/* - Used on every page - */
 footer{
 	background-color:#7F7F7F; /*Gray*/
 }
-
 .logoAndLinks {
 	background-color:#7F7F7F; /*Gray*/
 	padding:10px 20px;
 }
-
-/********************************************ADDRESS AND PHONE NUMBER***********************************************/
+/*-----Address & Phone Section-------- */
 .logoAndAddress img{
 	margin:0 auto;
 }
 .logoAndAddress p{
 	padding:15px;
 }
-
-/*******************************************RELATED LINKS***********************************************************/
-
+/*------Related Links --------------- */
 .footerLinks h3{
-	text-align:;
-	color:; 
 	padding:10px;
 }
 .linksItem{
 	padding:0px 15px;
-	text-align:;
 }
 .linksItem a{
 	text-decoration:none;
@@ -416,12 +368,7 @@ footer{
 .linksItem a:hover{
 	color:#E74C3C; /*BRIGHT RED*/ 
 }
-
-
-/***************************************************************************END OF FOOTER SECTION***************************************************************************/
-
-
-/***************************************************************************WEBSITE CREDITS*****************************************************************************/
+/* -----Credits & Copyright -------- */
 .creditsOuter{
 	background-color:#404040; /*Dark Gray/black */
 	width:100%;
@@ -442,73 +389,17 @@ footer{
 .credits p a:hover{
 	color:#E74C3C; /*BRIGHT RED*/ 
 }
-/***************************************************************************END OF FOOTER SECTION****************************************************************************/
+.credits img{
+	width:10px;
+	height:10px;
+	vertical-align:text-bottom;
+}
 
-/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ MEDIA QUERIES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-	HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE -- HOME PAGE --
-/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ MEDIA QUERIES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-@media screen and (min-width: 559px) {
-	.logoAndLinks {
-		display:table;
-	}
-	.logoAndAddress{
-		display:table-cell;
-		width:50%;
-		vertical-align:top;
-		box-shadow:border-box;
-		background-color:inherit;
-	}	
-	.footerLinks{
-		display:table-cell;
-		width:50%;
-		padding-top:75px;
-		vertical-align:top;
-		box-shadow:border-box;
-		background-color:inherit;
-	}
-	.credits p {
-		font-size:14px;
-	}
-}
-/***********************************************************************************/
-/***************************WHAT WE HAVE IMAGE WIDTH CHANGE*************************/
-@media screen and (min-width: 560px) and (max-width: 799px) {
-	.hardware img {
-		width:90%;
-		padding: 0 5%;
-		max-height:550px;
-	}
-	.electronics img {
-		width:90%;
-		padding: 0 5%;
-		max-height:550px;
-	}
-	.software img {
-		width:90%;
-		padding: 0 5%;
-		max-height:550px;
-	}	
-}
-/***********************************************************************************/
-/***************************WHAT WE HAVE IMAGE WIDTH CHANGE*************************/
-@media screen and (min-width: 800px)  {	
-	.hardware img {
-		width:80%;
-		padding: 0 10%;
-		max-height:550px;
-	}
-	.electronics img {
-			width:80%;
-			padding: 0 10%;
-			max-height:550px;
-		}		
-	.software img {
-		width:80%;
-		padding: 0 10%;
-		max-height:550px;
-	}      
-}
-/*************************HEADER CHANGES*********************************************/	 
+
+
+
+/*@ ------*[ALL PAGES] Media Queries - Header Section *--------------------- @*/
+/*@ - Used on every page - @*//	 
 @media screen and (min-width: 959px){	
 	header .sectionData{
 		width:100%;
@@ -523,7 +414,50 @@ footer{
 		padding:;
 		background-color:inherit;
 	}
-/***********************************/
+/*@ ------* Nav Menu *----------- @*/
+	.navMenu{
+		display:table-cell;
+		margin-right:;
+		width:60%;
+		vertical-align:middle;
+		box-shadow:border-box;
+		padding:;
+		border:none; 
+		background-color:inherit;
+	}
+	.navItem {
+	  width: 32%;
+	  height:100%;
+	  text-align:center;
+	}
+
+	.navItem  a{
+		font-size:2em;
+		line-height:24px;
+		color:#F2A663; /*ORANGE*/
+	}
+	.navItem a:hover{
+		color:#BDD4DE; /*LIGHT BLUE*/
+	}	
+	.currentPage a{
+		color:black;
+	}
+} 
+@media screen and (min-width: 959px){	
+	header .sectionData{
+		width:100%;
+		display:table;
+		padding-bottom:10px; 
+	}	
+	header figure{
+		display:table-cell;
+		width:40%;
+		vertical-align:top;
+		box-shadow:border-box;
+		padding:;
+		background-color:inherit;
+	}
+/*@ ------* Nav Menu *----------- @*/
 	.navMenu{
 		display:table-cell;
 		margin-right:;
@@ -552,7 +486,80 @@ footer{
 		color:black;
 	}
 }
-/*****************DISPLAY WHAT WE HAVE IN THREE COLUMS CHANGES********************/	 
+
+
+
+
+
+/*@ ------*[ALL PAGES] Media Queries - Footer Section *--------------------- @*/
+/*@ - Used on every page ----------- @*/
+/*@ ------* Logo, Links & Credits *----------- @*/
+@media screen and (min-width: 559px) {
+	.logoAndLinks {
+		display:table;
+	}
+	.logoAndAddress{
+		display:table-cell;
+		width:50%;
+		vertical-align:top;
+		box-shadow:border-box;
+		background-color:inherit;
+	}	
+	.footerLinks{
+		display:table-cell;
+		width:50%;
+		padding-top:75px;
+		vertical-align:top;
+		box-shadow:border-box;
+		background-color:inherit;
+	}
+	.credits p {
+		font-size:14px;
+	}
+	.credits img{
+		width:15px;
+		height:15px;
+	}	
+}
+
+
+
+
+/*@ ------*[Homepage] Media Queries - What We Have Image Width Changes *--- @*/
+@media screen and (min-width: 560px) and (max-width: 799px) {
+	.hardware img {
+		width:90%;
+		padding: 0 5%;
+		max-height:550px;
+	}
+	.electronics img {
+		width:90%;
+		padding: 0 5%;
+		max-height:550px;
+	}
+	.software img {
+		width:90%;
+		padding: 0 5%;
+		max-height:550px;
+	}	
+}
+@media screen and (min-width: 800px)  {	
+	.hardware img {
+		width:80%;
+		padding: 0 10%;
+		max-height:550px;
+	}
+	.electronics img {
+			width:80%;
+			padding: 0 10%;
+			max-height:550px;
+		}		
+	.software img {
+		width:80%;
+		padding: 0 10%;
+		max-height:550px;
+	}      
+} 
 @media screen and (min-width: 959px){	
 	.whatWeHave .innerSection{
 		display:table;
@@ -587,7 +594,10 @@ footer{
 	}
 
 }
-/*****************DISPLAY HOURS AND LOCATION IN TWO COLUMNS CHANGES********************/	 
+
+
+
+/*@ ------*[Homepage] Media Queries - Hours & Location 2 Column Changes *--- @*/ 
 @media screen and (min-width: 959px){	
 	.hoursAndLocation .innerSection{
 		display:table;
@@ -623,6 +633,40 @@ footer{
 		padding-top:60px;
 	}	
 }	
+
+
+
+
+
+
+/*	------------[Library] - Library Page Rules *----------------------------- */
+/*  - The library page implements a lot of css rule from the home  and about 
+	pages and does not have as many of its own classes ---------------------- */ 
+.libraryVisualLead h2 {
+	text-align: center;
+	font-size:2.5em;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+.libraryCollection  ul{
+	padding:25px;
+	text-align:;
+}
+.libraryCollection  ul a{
+	text-decoration:none;
+	color:purple;
+}
+.libraryCollection ul a:hover{
+	color:#E74C3C; /*BRIGHT RED*/ 
+}
+.commingSoon{
+	text-decoration:line-through;
+}
+
+
+
+
+
 /*===================================================================================================================================================================================
  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE -->
 ====================================================================================================================================================================================*/
@@ -765,6 +809,17 @@ footer{
 .ourTeam  a:hover{
 	color:#F2A663; /*ORANGE*/
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ MEDIA QUERIES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
