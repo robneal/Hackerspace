@@ -1,31 +1,21 @@
 /* 
-- Rutgers HackRSpace Copyright 2016; 
+- Rutgers DCS HackRSpace Copyright 2017; 
 - Author(s): Robert Neal;  
-- Last Updated: September 28, 2016; 
+- Last Updated: Januanry 6, 2017; 
 */
 
 /*	-------------[ALL PAGES] General CSS Element Rules *--------------------- */
-html, body {
-	margin:0;
-	padding:0;
-	border: 0; 
+*{
+	/* IMPORTANT - Apply Border box styling to all elements */
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing: border-box;
 }
-body {
-	font-family: verdana, helvetica, geneva, san-serif;
-	font-size: 14px;
-	color: #424242;
-	line-height: 180%;
-	color:#1a1a1a;
-	background-color:#FFFFE5; /*OFF WHITE*/
-}
-h1, h2, h3, h4, h5, h6 , figure, article,p ,iframe{
+
+html,body,h1, h2, h3, h4, h5, h6 , figure, article,p ,iframe{
 	margin: 0;
 	padding: 0;
 	border: 0; 
-}
-
-header, nav, footer, section, article, div, figure, iframe{
-	box-sizing: border-box;
 }
 img, embed, object, video{
 	max-width:100%;	
@@ -39,7 +29,7 @@ ul, li {
 	padding: 0;
 	margin: 0;
 }
-a {
+a { /* Used to ensure links are clickable on smaller devices */ 
 	min-width:48px;
 	min-height:48px;
 }
@@ -47,7 +37,14 @@ a:visited {
 	color:initial; /*or inherit*/ 
 }
 
-
+body {
+	font-family: verdana, helvetica, Geneva, san-serif;
+	font-size: 14px;
+	color: #424242;
+	line-height: 180%;
+	color:#1a1a1a;
+	background-color:white;
+}
 
 /*-------------[ALL PAGES] Class & CSS Rules Used to Debug *----------------- */
 .debug{
@@ -62,23 +59,12 @@ a:visited {
 
 /*	-------------[ALL PAGES] General Section Rules *------------------------- */
 /* - Each page is made of several section layers to make the site responsive - */
-.outerSection{
-	margin:0;
+.outerWrapper, .innerWrapper, .contentWrapper{
 	width:100%;
-	border:solid 0px red;
+}
+.outerWrapper{
+	margin:0;
 	min-width:310px;
-}
-.innerSection{
-	width:100%;
-	margin:0;
-	border:solid blue 0px;
-	min-width:;
-}
-.sectionData{
-	width:100%;
-	display:;
-	border:solid 0px green;
-	min-width:;
 }
 
 
@@ -88,22 +74,16 @@ a:visited {
 header{
 	background-color:white;
 }
-header .innersection{
-	width:100%;
-}
-header .sectionData{
-	width:100%;
-	display:;
-}	
+
+
 /*-LOGO Rules-------------------------------*/
 header figure{
-	box-shadow:border-box;
 	width:100%;
 	vertical-align:top;
-	background-color:inherit;
 }
 header figure img{
 	width:100%;
+	padding: 30px 15%;
 }
 
 
@@ -111,10 +91,8 @@ header figure img{
 .navMenu{
 	width:100%;
 	vertical-align:middle;
-	box-shadow:border-box;
-	background-color:inherit;
-	background-color:#F2A663; /*ORANGE*/
-	border-top:solid 1px black; 
+	background-color: #D43F44; /*[Rutgers Red]*/
+	padding:30px 0;
 }
 .navList {
 	width:100%;
@@ -130,8 +108,8 @@ header figure img{
 	vertical-align:middle;
 }
 .navItem:nth-child(2){
-	border-left:solid 1px black;
-	border-right:solid 1px black;
+	border-left:solid 2px white;
+	border-right:solid 2px white;
 }
 .navItem  a{
 	box-sizing:border-box;
@@ -140,11 +118,11 @@ header figure img{
 	text-transform: uppercase;
 	line-height:24px;
 	text-align:center;
-	color:green; /*ORANGE*/
+	color:white; 
 	min-width:100%;
 }
 .navItem a:hover{
-	color:#BDD4DE; /*LIGHT BLUE*/
+	color:black; 
 }	
 .currentPage a{
 	color:black;
@@ -154,13 +132,13 @@ header figure img{
 
 /*	------------[Homepage] - Visual Lead Section Rules *--------------------- */
 
-.visualOuterSection{
-	background-color: #CDC5B7;
+#home .outterWrapper:nth-child(2){
+	background-color: #CDC5B7; /*[BROWN]*/
 }
-.visualLead {
+#home .visualLead{
 	width: 100%;
 	max-width:100%;
-	background-color:#CDC5B7; /*GRAY*/
+	background-color: #CDC5B7; /*[BROWN]*/
 }
 .visualImage {
 	box-sizing: border-box;
@@ -174,108 +152,129 @@ header figure img{
 	box-sizing: border-box;
 	width: 100%;
 	max-width:100%;
-	background-color:#CDC5B7; /*GRAY*/
-	width: 100%;
+	background-color: #CDC5B7; /*[BROWN]*/
+	padding:60px 5% 90px 5%;
 }
 .visualDescription  h2{
-	box-sizing: border-box;
 	padding:15px;
+	margin-bottom:30px;
 	text-align: center;
+	font-size: 2.2em;
+    line-height: 160%;
+    border-bottom: solid 1px black;
+    color:black;
 }
 .visualDescription  p{
 	box-sizing: border-box;
-	padding:5px 15px 20px 15px; 
+	padding:20px 15px 10px 15px;
+	text-align:center; 
 }
 .visualDescription a{
 	text-decoration:none;
-	color:purple;
+	color:white;
 }
 .visualDescription a:hover{
-	color:#E74C3C; /*BRIGHT RED*/ 
+	color:#D43F44; /*[Rutgers Red]*/
 }
 
 
 
-/*	-----------[Homepage] - What We Have Section Rules *--------------------- */
-.whatWeHave{
-	background-color:inherit;
-}
-
-/*	-----------[Homepage] - Hardware Section Rules *------------------------- */
+/*	-----------[Homepage & Library] - Hardware Section Rules *--------------- */
 .hardware{
-	background-color:#FFFFE5; /*OFF WHITE*/
+	background-color:#999999; /*[Gray]*/
+	padding:45px 0;
 }
 .hardware h2{
 	text-align:center;
-	padding:20px;
-	color:#F2A663; /*ORANGE*/
+	padding:20px 20px 45px 20px;
+	color:white; 
+	font-size: 1.7em;
+	text-transform: uppercase;
 }
-.hardware p {
-	padding:20px;
+.hardware article {
+	padding:25px;
+}
+.hardware p{
+	padding:0 5%;
+	text-align:center;
 }
 .hardware p a{
 	text-decoration:none;
-	color:purple;
+	color:white;
 }
 .hardware p a:hover{
-	color:#F2A663; /*ORANGE*/
+	color:#60BCFF; /*[Light Blue]*/
 }
 
-/*	-------------[Homepage] - Electronics Section Rules *-------------------- */
+/*	-------------[Homepage & Library] - Electronics Section Rules *---------- */
 .electronics{
-	background-color:#CDC5B7; /*GRAY*/
+	background-color: #CDC5B7; /*[BROWN]*/
+	padding:45px 0;
 }
 .electronics h2{
 	text-align:center;
-	padding:20px;
+	padding:20px 20px 45px 20px;
+	font-size: 1.7em;
+	text-transform: uppercase;
 }
-.electronics p {
-	padding:20px;
+.electronics article {
+	padding:25px;
+}
+.electronics p{
+	padding:0 5%;
+	text-align:center;
 }
 .electronics p a{
 	text-decoration:none;
-	color:purple;
+	color:white;
 }
 .electronics p a:hover{
-	color:#E74C3C; /*BRIGHT RED*/ 
+	color:#D43F44; /*[Rutgers Red]*/ 
 }
 
-/*	-----------[Homepage] - Software Section Rules *------------------------- */
+/*	-----------[Homepage & Library] - Software Section Rules *--------------- */
 .software{
-	background-color:#CDC5B7; /*GRAY*/
-	background-color:#F1E9BB; /*ORANGE WHITE*/
-	background-color:#FFFFE5; /*OFF WHITE*/
+	background-color:#999999; /*[Gray]*/
+	padding:45px 0;
 }
 .software h2{
 	text-align:center;
-	padding:20px;
-	color:#F2A663; /*ORANGE*/
+	padding:20px 20px 45px 20px;
+	color:white; 
+	font-size: 1.7em;
+	text-transform: uppercase;
 }
-.software p {
-	padding:20px;
+.software article {
+	padding:25px;
+}
+.software p{
+	padding:0 5%;
+	text-align:center;
 }
 .software p a{
 	text-decoration:none;
-	color:purple;
+	color:white;
 }
 .software p a:hover{
-	color:#F2A663; /*ORANGE*/
+	color:#60BCFF; /*[Light Blue]*/
 }
 
 
 /*	-----------[Homepage] - Hours & Location Section Rules *----------------- */
 .hoursAndLocation{
-	background-color:#CDC5B7; /*GRAY*/
+	background-color: #CDC5B7; /*[BROWN]*/
 }
 
 /*	-----------[Homepage] - Hours Section Rules *---------------------------- */
 .hours{
-	background-color:#CDC5B7; /*GRAY*/
+	background-color: #CDC5B7; /*[BROWN]*/
 	width:100%;
+	padding:45px 0 60px 0;
 }
 .hours h2{
 	text-align:center;
-	padding:20px;
+	padding:20px 20px 45px 20px;
+	font-size: 2.3em;
 }
 .hours p {
 	padding:0px 20px;
@@ -299,21 +298,22 @@ header figure img{
 	text-align: center;
 }
 .hours tr.even{
-	background-color:#BDD4DE; /*LIGHT BLUE*/  
+	background-color:#BDD4DE; /*[LIGHT BLUE]*/  
 }
 .hours tr:hover{
-	background-color:#E74C3C; /*BRIGHT RED*/ 
+	background-color:#E74C3C; /*[BRIGHT RED]*/ 
 }
 
 /*	-----------[Homepage] - Location Section Rules *------------------------- */
 .location{
-	background-color:#CDC5B7; /*GRAY*/
-	background-color:#F1E9BB; /*ORANGE WHITE*/
-	background-color:#FFFFE5; /*OFF WHITE*/
+	background-color:#999999; /*[GRAY]*/
+	padding:45px 0 60px 0;
 }
 .location h2{
 	text-align:center;
-	padding:20px;
+	padding:20px 20px 45px 20px;
+	font-size: 2.3em;
+	line-height: 140%;
 }
 .location p {
 	padding:10px 20px 15px 20px;
@@ -321,10 +321,10 @@ header figure img{
 }
 .location p a{
 	text-decoration:none;
-	color:purple;
+	color:white;
 }
 .location p a:hover{
-	color:#F2A663; /*ORANGE*/
+	color:#60BCFF; /*[Light Blue]*/
 }
 .location iframe{
 	box-shadow:border-box;
@@ -341,11 +341,12 @@ header figure img{
 /* -------------[ALL PAGES] Footer & Credits Section Rules*------------------ */
 /* - Used on every page - */
 footer{
-	background-color:#7F7F7F; /*Gray*/
+	background-color:#404040; /*[Dark Gray]*/
 }
 .logoAndLinks {
-	background-color:#7F7F7F; /*Gray*/
-	padding:10px 20px;
+	background-color:#404040; /*[Dark Gray]*/
+	padding:60px 20px;
+	color:#999999; /*[GRAY]*/
 }
 /*-----Address & Phone Section-------- */
 .logoAndAddress img{
@@ -366,28 +367,32 @@ footer{
 	color:white;
 }
 .linksItem a:hover{
-	color:#E74C3C; /*BRIGHT RED*/ 
+	color:#E74C3C; /*[BRIGHT RED]*/ 
 }
+
+
 /* -----Credits & Copyright -------- */
 .creditsOuter{
-	background-color:#404040; /*Dark Gray/black */
+	background-color:#000000; /*[Black] */
 	width:100%;
 }
 .creditsInner {
-	background-color:#404040; /*Dark Gray/black */
+	background-color:#000000; /*[Black] */
 }
 .credits p {
 	box-sizing:border-box;
 	font-size:10px;
-	padding:10px;
+	padding:20px;
 	text-align:center;
+	color:#999999; /*[GRAY]*/
 }
 .credits p a{
 	text-decoration:none;
 	color:white;
 }
 .credits p a:hover{
-	color:#E74C3C; /*BRIGHT RED*/ 
+	color:#E74C3C; /*[BRIGHT RED]*/ 
+	text-decoration: underline;
 }
 .credits img{
 	width:10px;
@@ -399,9 +404,9 @@ footer{
 
 
 /*@ ------*[ALL PAGES] Media Queries - Header Section *--------------------- @*/
-/*@ - Used on every page - @*//	 
+/*@ - Used on every page - @*/ 
 @media screen and (min-width: 959px){	
-	header .sectionData{
+	header .contentWrapper{
 		width:100%;
 		display:table;
 		padding-bottom:10px; 
@@ -410,20 +415,13 @@ footer{
 		display:table-cell;
 		width:40%;
 		vertical-align:top;
-		box-shadow:border-box;
-		padding:;
-		background-color:inherit;
 	}
 /*@ ------* Nav Menu *----------- @*/
 	.navMenu{
 		display:table-cell;
-		margin-right:;
 		width:60%;
 		vertical-align:middle;
-		box-shadow:border-box;
-		padding:;
-		border:none; 
-		background-color:inherit;
+		background-color:white;
 	}
 	.navItem {
 	  width: 32%;
@@ -434,53 +432,10 @@ footer{
 	.navItem  a{
 		font-size:2em;
 		line-height:24px;
-		color:#F2A663; /*ORANGE*/
+		color:#60BCFF; /*[Light Blue]*/
 	}
 	.navItem a:hover{
-		color:#BDD4DE; /*LIGHT BLUE*/
-	}	
-	.currentPage a{
-		color:black;
-	}
-} 
-@media screen and (min-width: 959px){	
-	header .sectionData{
-		width:100%;
-		display:table;
-		padding-bottom:10px; 
-	}	
-	header figure{
-		display:table-cell;
-		width:40%;
-		vertical-align:top;
-		box-shadow:border-box;
-		padding:;
-		background-color:inherit;
-	}
-/*@ ------* Nav Menu *----------- @*/
-	.navMenu{
-		display:table-cell;
-		margin-right:;
-		width:60%;
-		vertical-align:middle;
-		box-shadow:border-box;
-		padding:;
-		border:none; 
-		background-color:inherit;
-	}
-	.navItem {
-	  width: 32%;
-	  height:100%;
-	  text-align:center;
-	}
-
-	.navItem  a{
-		font-size:2em;
-		line-height:24px;
-		color:#F2A663; /*ORANGE*/
-	}
-	.navItem a:hover{
-		color:#BDD4DE; /*LIGHT BLUE*/
+		color:#D43F44; /*[Rutgers Red]*/
 	}	
 	.currentPage a{
 		color:black;
@@ -525,45 +480,49 @@ footer{
 
 
 
-/*@ ------*[Homepage] Media Queries - What We Have Image Width Changes *--- @*/
+/*@ ------*[Homepage] Media Queries - What We Have Image Width Changes *---- @*/
 @media screen and (min-width: 560px) and (max-width: 799px) {
 	.hardware img {
-		width:90%;
+		width:100%;
 		padding: 0 5%;
 		max-height:550px;
 	}
 	.electronics img {
-		width:90%;
+		width:100%;
 		padding: 0 5%;
 		max-height:550px;
 	}
 	.software img {
-		width:90%;
+		width:100%;
 		padding: 0 5%;
 		max-height:550px;
 	}	
 }
 @media screen and (min-width: 800px)  {	
 	.hardware img {
-		width:80%;
+		width:100%;
 		padding: 0 10%;
 		max-height:550px;
 	}
 	.electronics img {
-			width:80%;
+			width:100%;
 			padding: 0 10%;
 			max-height:550px;
 		}		
 	.software img {
-		width:80%;
+		width:100%;
 		padding: 0 10%;
 		max-height:550px;
 	}      
 } 
 @media screen and (min-width: 959px){	
-	.whatWeHave .innerSection{
+	.whatWeHave .innerWrapper{
 		display:table;
-		background-color:#FFFFE5; /*OFF WHITE*/
+		background-color:#999999; /*[Gray]*/
+	}
+	.libraryCollection{
+		display:table;
+		background-color:#999999; /*[Gray]*/
 	}
 	.hardware{
 		display:table-cell;
@@ -571,26 +530,31 @@ footer{
 		width:33%;
 		vertical-align:top;
 		box-shadow:border-box;
-		background-color:inherit;
+		background-color:#999999; /*[Gray]*/
 	}
+	
 	.electronics{
 		display:table-cell;
 		margin:;
 		width:33%;
 		vertical-align:top;
 		box-shadow:border-box;
-		background-color:inherit;
+		background-color:#999999; /*[Gray]*/
 	}
 	.electronics h2{
-		color:#F2A663; /*ORANGE*/
+		color:white;
 	}
+	.electronics p a:hover{
+		color:#60BCFF; /*[Light Blue]*/
+	}
+	
 	.software{
 		display:table-cell;
 		margin:;
 		width:33%;
 		vertical-align:top;
 		box-shadow:border-box;
-		background-color:inherit;
+		background-color:#999999; /*[Gray]*/
 	}
 
 }
@@ -599,40 +563,43 @@ footer{
 
 /*@ ------*[Homepage] Media Queries - Hours & Location 2 Column Changes *--- @*/ 
 @media screen and (min-width: 959px){	
-	.hoursAndLocation .innerSection{
+	.hoursAndLocation .innerWrapper{
 		display:table;
-		background-color:#CDC5B7; /*GRAY*/
+		background-color: #CDC5B7; /*[BROWN]*/
 	}
 	.hours{
-		background-color:#CDC5B7; /*GRAY*/
+		background-color: #CDC5B7; /*[BROWN]*/
 		display:table-cell;
 		width:50%;
 		vertical-align:top;
 		box-shadow:border-box;
-		background-color:inherit;
 	}
 	.location{
-		background-color:#CDC5B7; /*GRAY*/
+		background-color: #CDC5B7; /*[BROWN]*/
 		display:table-cell;
 		width:50%;
 		vertical-align:top;
 		box-shadow:border-box;
-		background-color:inherit;
 	}
 }
-@media screen and (min-width: 1300px) {
-	.innerSection{
-		width:;
+
+
+/*@ -----* Media Queries for larger screen *-------------------------------- @*/
+/*--!BUG-------------------------------------------------/	
+	There is an issue on larger screens where the content
+	background is white for portions. Check outterWrapper 
+	style.  
+ /------------------------------------------------------*/
+/*@media screen and (min-width: 1300px) {
+	.innerWrapper{
 		max-width:1300px;
 		margin:0px auto;
-		border:solid blue 0px;
-		min-width:;
 	}
 	.visualImage{
 		box-shadow:border-box;
 		padding-top:60px;
 	}	
-}	
+}	*/
 
 
 
@@ -640,141 +607,94 @@ footer{
 
 
 /*	------------[Library] - Library Page Rules *----------------------------- */
-/*  - The library page implements a lot of css rule from the home  and about 
-	pages and does not have as many of its own classes ---------------------- */ 
-.libraryVisualLead h2 {
-	text-align: center;
-	font-size:2.5em;
-	padding-top:20px;
-	padding-bottom: 20px;
-}
+/*  - The library page implements a lot of css rule from the home 
+ and about pages and does not have as many of its own classes.
+----------------------------------------------------------------------------- */ 
 .libraryCollection  ul{
-	padding:25px;
+	padding:25px 10%;
 	text-align:;
 }
-.libraryCollection  ul a{
+.libraryCollection ul li{
+	width:100%;
+    border-bottom: solid 1px black;
+}
+.libraryCollection a{
 	text-decoration:none;
-	color:purple;
+	color:white;
 }
-.libraryCollection ul a:hover{
-	color:#E74C3C; /*BRIGHT RED*/ 
+.libraryCollection a:hover{
+	color:#60BCFF; /*[Light Blue]*/;
 }
-.commingSoon{
+.libraryCollection .commingSoon{
 	text-decoration:line-through;
+	color:black;
+}
+.libraryCollection .commingSoon:hover{
+	text-decoration:line-through;
+	color:black;
 }
 
 
 
 
 
-/*===================================================================================================================================================================================
- ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE -->
-====================================================================================================================================================================================*/
+
+
+
+
+
+/*	------------[About Us] - About Hackerspace Section Rules *--------------- */
 .aboutHackerspace{
-	background-color:#CDC5B7; /*GRAY*/
+	background-color:#CDC5B7; /*[BROWN]*/
 }
 .aboutHackerspace  {
 	box-sizing: border-box;
-	width: 100%;
 	max-width:100%;
-	background-color:#CDC5B7; /*GRAY*/
+	background-color:#CDC5B7; /*[BROWN]*/
 	width: 100%;
 }
-.aboutHackerspace  h2{
-	box-sizing: border-box;
-	padding:15px 
-}
-.aboutHackerspace  p{
-	box-sizing: border-box;
-	padding:5px 15px 10px 15px; 
-}
-/*************************************END OF  ABOUT HACKERSPACE SECTION********************************/
 
-/*************************************START OF  HACKERSPACE POLICY SECTION********************************/
-.hackerspacePolicy{
-	background-color:#FFFFE5; /*OFF WHITE*/
-}
-/*********************************************************************************************************/
-/******************************************HACKERSPACE DO'S*****************************************************************/
-.doPolicy{
-	background-color:#FFFFE5; /*OFF WHITE*/
-}
-.doPolicy h2{
-	text-align:center;
-	padding:20px;
-	color:#F2A663; /*ORANGE*/
-}
-.doPolicy ul{
-	margin: 0px 20px;
-	padding:0px 0px 10px 0px;
-	list-style:;
-}
-.doPolicy li{
-	margin: 0px 20px;
-	padding:5px;
-	list-style:disc;
-}
-.doPolicy a{
-	text-decoration:none;
-	color:purple;
-}
-.doPolicy  a:hover{
-	color:#F2A663; /*ORANGE*/
-}
-/*****************************************END OF HACKERSPACE DO'S SECTION************************************************************/
 
-/****************************************START OF HACKERSPACE DONT'S SECTION************************************************************/
-.dontPolicy{
-	background-color:#CDC5B7; /*GRAY*/
-}
-.dontPolicy h2{
-	text-align:center;
-	padding:20px;
-	color:;
-}
-.dontPolicy ul{
-	margin: 0px 20px;
-	padding:0px 0px 10px 0px;
-	list-style:;
-}
-.dontPolicy li {
-	margin: 0px 20px;
-	padding:5px;
-	list-style:disc;
-}
-.dontPolicy a{
-	text-decoration:none;
-	color:purple;
-}
-.dontPolicy a:hover{
-	color:#E74C3C; /*BRIGHT RED*/ 
-}
-/************************************************************END OF HACKERSPACE POLICY******************************************************************************/
+
+
+
+/*	------------[About Us] - Hackerspace Team Section Rules *--------------- */
 .hackerspaceTeam{
-	background-color:#FFFFE5; /*OFF WHITE*/
+	background-color:#999999; /*[Gray]*/
 }
-/****************************************************************************/
-
 .ourTeam{
-	background-color:inherit; /*OFF WHITE*/
+	padding:60px 5% 60px 5%;
 }
+.ourTeam .seperator{
+	width:35%;
+	border-bottom:solid 3px black;
+	margin: 0 auto 45px auto;
+}
+
 .hackerspaceTeam h2{
 	text-align:center;
-	padding:20px;
-	color:#F2A663; /*ORANGE*/
+	padding:20px 0;
+	color:white;
+    font-size: 1.7em;
+    line-height: 160%;
+    margin:0 45px 0px 45px;
+    text-transform: uppercase;
 }
+
 
 .teamMember{
 	display:table;
-	border-bottom: dashed 1px black;
+	border-bottom: solid 1px white;
+	border-bottom-width: 80%;
 	width:100%;
 	box-sizing:border-box; 
 	padding:10px;	
-	
+	margin:10px;
 }
 .teamMember:last-child{
 	border-bottom: none;
 }
+
 .teamMember figure{
 	display:table-cell;
 	width:35%;
@@ -786,64 +706,126 @@ footer{
 	border-radius:190px;
 	max-height:190px;
 	max-width: 190px;
-	
+
 	min-width: 82px;
 	min-height: 82px;
+
+	margin:0 auto;
 }
-.teamMember figure p {
-	text-align:center;
-	text-transform:;
-	font-weight:bold;
-	max-width:100%;
-}	
-.teamMemberText{
+.teamMember p {
 	display:table-cell;
 	width:65%;
 	vertical-align:middle;
-	padding:20px 0px; 
-}
-.ourTeam a{
-	text-decoration:none;
-	color:purple;
-}
-.ourTeam  a:hover{
-	color:#F2A663; /*ORANGE*/
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ MEDIA QUERIES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE -->
-/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ MEDIA QUERIES @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-@media screen and (min-width: 480px) and (max-width: 639px) {
-	.teamMember {
-		font-size: 16x;
-	}
-}
-
-@media screen and (min-width: 480px){	
-	.doPolicy{
-		box-sizing:border-box;
-		padding:20px;
-	}
-	.dontPolicy{
-		box-sizing:border-box;
-		padding:20px;
-	}	
-}
-
-
+	padding:0px 0px; 
 	
+	text-align:center;
+	font-weight:bold;
+	max-width:100%;
+}
+/*BUG! - IF TEAM MEMBER NAME OR TITLE LONG 
+ENOUGH CONTENT OVERFLOWS CONTAINER */
+.teamMember .name{
+	font-size: 1.1em;
+    text-transform: uppercase;
+    display:block;
+    padding:0;
+    color:white;
+}
+.teamMember .title{
+	color: black;
+    font-size: 0.9em;
+    display: block;
+    padding:0;
+}
+.teamMember .email{
+	color: black;
+    font-size: 0.9em;
+    display: block;
+    padding:0;
+}
+
+
+
+
+
+/*	------------[About Us] - Hackerspace Policy Section Rules *-------------- */
+.hackerspacePolicy{
+	background-color:#CDC5B7; /*[BROWN]*/
+}
+/*	------------[About Us] - Hackerspace Do's Rules *--------------- */
+.doPolicy{
+	background-color:#CDC5B7; /*[BROWN]*/
+	padding:60px 20px;
+}
+.doPolicy h2{
+	text-align:center;
+	padding:20px;
+	text-transform: uppercase;
+    font-size: 1.7em;
+    line-height: 160%;
+}
+.doPolicy ul{
+	margin: 0px 20px;
+	padding:0px 0px 10px 0px;
+	list-style:;
+}
+.doPolicy li {
+	margin: 0px 20px;
+	padding:5px;
+	list-style:disc;
+}
+.doPolicy a{
+	text-decoration:none;
+	color:white;
+}
+.doPolicy a:hover{
+	color:#60BCFF; /*[Light Blue]*/
+}
+
+/*	------------[About Us] - Hackerspace Dont's Rules *--------------- */
+.dontPolicy{
+	background-color:#999999; /*[Gray]*/
+	padding:60px 20px;
+}
+.dontPolicy h2{
+	text-align:center;
+	padding:20px;
+	color:white;
+	text-transform: uppercase;
+    font-size: 1.7em;
+    line-height: 160%;
+}
+.dontPolicy ul{
+	margin: 0px 20px;
+	padding:0px 0px 10px 0px;
+	list-style:;
+}
+.dontPolicy li{
+	margin: 0px 20px;
+	padding:5px;
+	list-style:disc;
+}
+.dontPolicy a{
+	text-decoration:none;
+	color:white;
+}
+.dontPolicy  a:hover{
+	color:#60BCFF; /*[Light Blue]*/
+}
+
+
+
+
+
+
+/*@ ------*[About Us] Media Queries - Team Members 2 Column Changes *------- @*/
+@media screen and (min-width: 480px) {
+	.teamMember {
+		font-size: 16px;
+	}
+}
+
+
 @media screen and (min-width: 640px) and (max-width: 959px) {
 	.ourTeam{
 		display:table;
@@ -851,96 +833,69 @@ ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US PAGE --  ABOUT US
 		
 	.teamMember:nth-child(odd){
 		display:inline-block;
-		width:50%;
-		box-sizing:border-box;
-		float:;
-		border-right: dashed 1px black; 
+		width:45%;
 	}
 	.teamMember:nth-child(even){
 		display:inline-block;
-		width:50%;
-		box-sizing:border-box;
-		float:;
+		width:45%;
 	}
 	.teamMember:last-child{
-		border-bottom: dashed 1px black;
-		border-right:;
-	}	
-}
-@media screen and (min-width: 860px) and (max-width: 959px) {
-	.teamMember {
-		font-size: 16x;
+		border-bottom: solid 1px white;
 	}	
 }
 
 
 
 
+/*@ ------*[About Us] Media Queries - About Page Section Changes *---------- @*/
 @media screen and (min-width: 960px) {
 	.aboutHackerspace{
-		background-color:inherit; /*OFF WHITE*/
-		background-color:#CDC5B7; /*GRAY*/
-	}
-	.hackerspacePolicy{
-		background-color:#CDC5B7; /*GRAY*/
-		background-color:inherit; /*OFF WHITE*/
+		background-color:#CDC5B7; /*[BROWN]*/
+
 	}
 	.hackerspaceTeam{
-		background-color:inherit; /*OFF WHITE*/
-		background-color:#CDC5B7; /*GRAY*/
+		background-color:#999999; /*[Gray]*/
 	}
-/***********************************************************/	
+	.hackerspacePolicy{
+		background-color:#CDC5B7; /*[BROWN]*/
+
+	}
+
+	/*@ ------*[About Us] Media Queries - Team Members 3 Column Changes *--- @*/	
 	.ourTeam{
 		display:table;
-		background-color:inherit; /*GRAY*/
+		background-color:; /*[BROWN]*/
+
 	}
 	.hackerspaceTeam h2{
-		color:black;
+		color:white;
 	}
-	.teamMember:nth-child(odd){
+	.teamMember{
 		display:inline-block;
-		width:33%;
-		box-sizing:border-box;
-		float:;
-		border-right: dashed 1px black; 
-	}
-	.teamMember:nth-child(even){
-		display:inline-block;
-		width:33%;
-		box-sizing:border-box;
-		float:;
-		border-right: dashed 1px black; 
-	}
-	.teamMember:nth-child(3n+0){
-		border-right:none;
-		border-bottom: dashed 1px black;
+		width:31%;
 	}		
-	
 	.teamMember:last-child{
-		border-bottom: dashed 1px black;
-		border-right:;
-	}	
-/********************************************/	
+		border-bottom: solid 1px white;
+	}
+
+	/*@ ------*[About Us] Media Queries - HackRspace Policy 1 Column  *----- @*/	
 	.hackerspacePolicy{
 		display:table;
-		background-color: ;
+		background-color:#CDC5B7; /*[BROWN]*/
 	}
 	.doPolicy{
 		display:table-cell;
 		width:50%;
-		box-sizing:border-box;
-		background-color:inherit;
-		border-right: dashed 0px black;
+		background-color:#CDC5B7; /*[BROWN]*/
 	}
 	.dontPolicy{
 		display:table-cell;
 		width:50%;
-		box-sizing:border-box;
-		background-color:inherit;
+		background-color:#CDC5B7; /*[BROWN]*/
 	}
 	.dontPolicy h2{
-		color:#F2A663; /*ORANGE*/	
+		color:black;	
 	}
-	
-	
 }
+
+

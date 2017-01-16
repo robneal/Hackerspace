@@ -1,0 +1,55 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Raspberry Pi</title>
+</head>
+<body>
+
+	<h4>Raspberry Pi</h4>
+
+	<p>
+		Start at 
+		<a href="http://www.raspberrypi.org">http://www.raspberrypi.org</a>, for
+		downloadable disk (or rather SD card) images of unix installations,
+		manuals, and so on.  <a href="http://www.engadget.com/tag/RaspberryPi/"> 
+		http://www.engadget.com/tag/RaspberryPi/</a> has lots of cool things done with 'Pis.
+	</p>
+
+	<p>
+		So far we've installed 'wheezy' and 'archlinux' on Raspberry Pis - of
+		the two, 'wheezy' (Debian-based) was the easier to get running -- the
+		'archlinux' (arm-v6h) distribution comes without a number of items,
+		notably X.  This can be installed via the net (ASK BEFORE HOOKING YOUR
+		DEVICES TO THE WALL), using 'pacman', rather than apt-get or yum.<p>
+	</p>
+
+	<p>
+		More recent images of 'wheezy' include drivers for most wireless
+		networking devices available.  There's a "WiFi" icon on the X desktop
+		that will allow you to select the SSID you want to talk to and
+		generally set up things right.  If you want to use command line
+		commands for configuring the wireless device, the magic command is
+		"iwconfig", which works a lot like "ifconfig".
+	</p>
+	<p>
+		<b>Tired of the weird keyboard?</b> Wheezy, and some other
+		distributions, come with 'uk' keyboard defaults, which turn out to be
+		different than keyboards over here.  (This is also known as the "Where
+		the &!&? is the '|' key?" problem.)
+	</p>
+	<p>
+		Edit <b>/etc/defaults/keyboard</b>, and change the layout thus:<p>
+		<b>XKBLAYOUT="us"</b><p>
+		Restarting X should now give you a rational keyboard.  For alternative ways
+		of doing the same thing, see <a href="http://www.raspberrypi.org/phpBB3/viewtopic.php?f=26&t=9136">this article</a>
+	</p>
+
+
+	<ul>
+		<li><a href="docs/RaspberryPiIntro.pdf">An introduction to the Pi</a>
+		<li><a href="docs/RaspberryPihowto.pdf">How to use 'em.</a>
+	</ul>
+
+</body>
+
+</html>
